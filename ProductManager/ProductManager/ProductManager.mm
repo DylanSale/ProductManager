@@ -7,7 +7,6 @@
 //
 
 #import "ProductManager.h"
-//#import <CommonCrypto/CommonDigest.h>
 //#import "cocos2d.h" //use this to get CCLOG
 #define CCLOG(...)
 
@@ -30,44 +29,8 @@ static ProductManager *sharedInstance = nil;
 	[products setObject:product forKey:product.productID];
 }
 
-/*
-- (NSString*)md5HexDigest:(NSString*)input {
-    const char* str = [input UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(str, strlen(str), result);
-	
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_MD5_DIGEST_LENGTH; i++) {
-        [ret appendFormat:@"%02x",result[i]];
-    }
-    return ret;
-}
-*/
-
 - (void) purchaseProduct:(NSString*)productID
 {
-/*	NSString* code = [[NSUserDefaults standardUserDefaults] stringForKey:@"UnlockCode"];
-	if (code != nil && ![code isEqual:@""]) 
-	{
-		NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://twolivesleft.com/unlock_code.php?code=%@",code]];
-		NSString* hash = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-		if (hash) 
-		{
-			NSString* data = [NSString stringWithFormat:@"%@%@",code,@"WpanXZHKq"]; //this salt is on the server as well
-			NSString* dataHash = [self md5HexDigest:data];
-			CCLOG(@"serverHash = %@, hash = %@",hash,dataHash);
-			
-			if ([dataHash isEqual:hash]) 
-			{
-				Product* product = [self productForID:productID];
-				[product purchasedWith:nil];
-				[purchaseDelegate product:product purchasedWith:nil];
-				return;
-			}
-		}
-		
-	} 
-*/	
 	if ([self storeEnabled])
 	{
 		assert(observing);
