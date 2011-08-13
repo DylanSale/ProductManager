@@ -26,8 +26,8 @@
 		462CEC9F13ED6D5A00091B4E /* CurrencyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 462CEC9913ED6D5A00091B4E /* CurrencyProduct.m */; };
 		462CECA013ED6D5A00091B4E /* Product.mm in Sources */ = {isa = PBXBuildFile; fileRef = 462CEC9B13ED6D5A00091B4E /* Product.mm */; };
 		462CECA113ED6D5A00091B4E /* ProductManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 462CEC9D13ED6D5A00091B4E /* ProductManager.mm */; };
-		462CECA413ED6DAF00091B4E /* ExampleProduct.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462CECA313ED6DAF00091B4E /* ExampleProduct.plist */; };
 		462CECA613ED706E00091B4E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CECA513ED706E00091B4E /* StoreKit.framework */; };
+		4670FEE913F65A99008D8892 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4670FEE813F65A99008D8892 /* Products.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +68,8 @@
 		462CEC9C13ED6D5A00091B4E /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
 		462CEC9D13ED6D5A00091B4E /* ProductManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProductManager.mm; sourceTree = "<group>"; };
 		462CEC9E13ED6D5A00091B4E /* ProductPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPurchaseDelegate.h; sourceTree = "<group>"; };
-		462CECA313ED6DAF00091B4E /* ExampleProduct.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExampleProduct.plist; sourceTree = "<group>"; };
 		462CECA513ED706E00091B4E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4670FEE813F65A99008D8892 /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +147,7 @@
 		462CEC6013ED6CCB00091B4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4670FEE713F65A99008D8892 /* Resources */,
 				462CEC6113ED6CCB00091B4E /* ProductManager-Info.plist */,
 				462CEC6213ED6CCB00091B4E /* InfoPlist.strings */,
 				462CEC6513ED6CCB00091B4E /* main.m */,
@@ -184,10 +185,17 @@
 				462CEC9C13ED6D5A00091B4E /* ProductManager.h */,
 				462CEC9D13ED6D5A00091B4E /* ProductManager.mm */,
 				462CEC9E13ED6D5A00091B4E /* ProductPurchaseDelegate.h */,
-				462CECA313ED6DAF00091B4E /* ExampleProduct.plist */,
 			);
 			path = ProductManager;
 			sourceTree = "<group>";
+		};
+		4670FEE713F65A99008D8892 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4670FEE813F65A99008D8892 /* Products.plist */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -262,7 +270,7 @@
 				462CEC6413ED6CCB00091B4E /* InfoPlist.strings in Resources */,
 				462CEC6D13ED6CCB00091B4E /* MainWindow.xib in Resources */,
 				462CEC7313ED6CCB00091B4E /* RootViewController.xib in Resources */,
-				462CECA413ED6DAF00091B4E /* ExampleProduct.plist in Resources */,
+				4670FEE913F65A99008D8892 /* Products.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

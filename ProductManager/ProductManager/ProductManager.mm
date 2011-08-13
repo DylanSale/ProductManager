@@ -7,9 +7,9 @@
 //
 
 #import "ProductManager.h"
-//#import "cocos2d.h" //use this to get CCLOG
-#define CCLOG(...)
-
+//#import <CommonCrypto/CommonDigest.h>
+//#import "cocos2d.h"
+#define CCLOG(...) {}
 static ProductManager *sharedInstance = nil;
 
 @implementation ProductManager
@@ -24,9 +24,27 @@ static ProductManager *sharedInstance = nil;
 
 - (void) registerProduct:(Product*)product
 {
-	assert(!observing);
-	
+	NSAssert(!observing, @"Already observing, should not register more products (their transactions may have been missed already)");
+	NSAssert([products objectForKey:product.productID] == nil, @"Re-registering the same product ID");
 	[products setObject:product forKey:product.productID];
+}
+
+- (void) registerProductsFromPlistNamed:(NSString*)name
+{
+    NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"plist"]];
+    NSArray* productArr = [dict objectForKey:@"Products"];
+    NSAssert(productArr, @"No Products array in plist");
+    if(!productArr) return;
+    for (NSDictionary* prod in productArr)
+    {
+        Product* product = [Product productWithDict:prod];
+        [self registerProduct:product];
+    }
+}
+
+- (void) registerProductsFromPlist
+{
+    [self registerProductsFromPlistNamed:@"Products"];
 }
 
 - (void) purchaseProduct:(NSString*)productID
@@ -71,7 +89,7 @@ static ProductManager *sharedInstance = nil;
 
 - (id) init
 {
-	if (self = [super init]) 
+	if ((self = [super init])) 
 	{
 		observing = false;
 		products = [[NSMutableDictionary alloc] init];

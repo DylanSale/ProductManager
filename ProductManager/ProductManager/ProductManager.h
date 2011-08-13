@@ -46,6 +46,17 @@
 - (void) registerProduct:(Product*)product;
 
 /* 
+ * Gets an array of products from the Product key of the plist,
+ * Creates them, then adds them to the Manager
+ */
+- (void) registerProductsFromPlistNamed:(NSString*)name;
+
+/*
+ * Same  as registerProductsFromPlistNamed:, but gets it from Products.plist
+ */
+- (void) registerProductsFromPlist;
+
+/* 
  * Start waiting for transactions to respond, 
  * Should be done at the start of the app so that we dont miss any.
  * Should only do this once all products have been added

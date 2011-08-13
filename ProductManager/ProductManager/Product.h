@@ -55,4 +55,17 @@
  */
 - (void) purchaseFailed:(SKPaymentTransaction *)transaction;
 
+/*
+ * Create a Product (or subclass) using the dictionary
+ * Reads the "Type" key from the dictionary for the class to use.
+ */
++ (Product*) productWithDict:(NSDictionary*)dict;
+
+/*
+ * Load a PLIST file and create a Product (or subclass) using it.
+ * Uses productWithDict to create the product.
+ */
++ (Product*) productWithPlist:(NSString*)file;
+
+
 @end

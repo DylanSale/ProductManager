@@ -14,4 +14,9 @@
     int unlockAmount; //number of Crabux to unlock when this product is purchased
 }
 
+- (void) spend:(NSUInteger)amount;
+- (NSInteger) amountLeft;
+
++ (void) spend:(NSUInteger)amount ofCurrency:(NSString*) currencyKey;
++ (NSInteger) amountLeftForCurrency:(NSString*) currencyKey;
 @end

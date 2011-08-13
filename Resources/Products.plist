@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Products</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>CurrencyProduct</string>
+			<key>DisplayProperties</key>
+			<dict>
+				<key>Icon</key>
+				<string>onebux.png</string>
+			</dict>
+			<key>CurrencyKey</key>
+			<string>BUX</string>
+			<key>UnlockAmount</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Bux x1</string>
+			<key>ID</key>
+			<string>com.example.game.onebux</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>CurrencyProduct</string>
+			<key>DisplayProperties</key>
+			<dict>
+				<key>Icon</key>
+				<string>tenbux.png</string>
+			</dict>
+			<key>CurrencyKey</key>
+			<string>BUX</string>
+			<key>UnlockAmount</key>
+			<integer>10</integer>
+			<key>Name</key>
+			<string>Bux x10</string>
+			<key>ID</key>
+			<string>com.example.game.tenbux</string>
+		</dict>
+	</array>
+</dict>
+</plist>
