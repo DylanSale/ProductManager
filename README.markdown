@@ -1,6 +1,8 @@
 README
 ------
 
+All code in this repository marked as Copyright Two Lives Left is released under a BSD license as described in the LICENSE file provided.
+
 ProductManager manages iOS StoreKit products at a higher level than StoreKit.
 You create Product subclasses, and give it params in an NSDictionary (loaded from a plist probably), then implement the unlock method.
 The products are registered with the ProductManager, which then starts observing for transactions, and can notify other code of unlocks using its delegate.
