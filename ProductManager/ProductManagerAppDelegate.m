@@ -29,10 +29,14 @@
      */
     if([ProductManager sharedInstance].storeEnabled)
     {
+        /* you could do it this way if you wanted
         NSDictionary* params = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExampleProduct" ofType:@"plist"]];
         Product* testProduct = [[[Product alloc] initWithParams:params] autorelease];
+         [[ProductManager sharedInstance] registerProduct:testProduct];
+         */
         
-        [[ProductManager sharedInstance] registerProduct:testProduct];
+        //Will load the products out of a Product.plist file which has an array of dictionaries.
+        [[ProductManager sharedInstance] registerProductsFromPlist];
 
         //Start observing as soon as possible
         [[ProductManager sharedInstance] startObserving];
